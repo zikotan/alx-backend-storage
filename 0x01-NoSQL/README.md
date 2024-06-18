@@ -1,41 +1,32 @@
-Resources
-Read or watch:
+# 0x01. NoSQL
 
-NoSQL Databases Explained
-What is NoSQL ?
-MongoDB with Python Crash Course - Tutorial for Beginners
-MongoDB Tutorial 2 : Insert, Update, Remove, Query
-Aggregation
-Introduction to MongoDB and Python
-mongo Shell Methods
-The mongo Shell
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+This repository contains various scripts and tasks related to NoSQL databases, specifically MongoDB. Each script is designed to perform specific database operations and queries.
 
-General
-What NoSQL means
-What is difference between SQL and NoSQL
-What is ACID
-What is a document storage
-What are NoSQL types
-What are benefits of a NoSQL database
-How to query information from a NoSQL database
-How to insert/update/delete information from a NoSQL database
-How to use MongoDB
-Requirements
-MongoDB Command File
-All your files will be interpreted/compiled on Ubuntu 18.04 LTS using MongoDB (version 4.2)
-All your files should end with a new line
-The first line of all your files should be a comment: // my comment
-A README.md file, at the root of the folder of the project, is mandatory
-The length of your files will be tested using wc
-Python Scripts
-All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7) and PyMongo (version 3.10)
-All your files should end with a new line
-The first line of all your files should be exactly #!/usr/bin/env python3
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should use the pycodestyle style (version 2.5.*)
-The length of your files will be tested using wc
-All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-All your functions should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)'
-Your code should not be executed when imported (by using if __name__ == "__main__":)
+## Directory Structure
+
+- `0-list_databases`: Script to list all databases.
+- `1-use_or_create_database`: Script to use or create a new database.
+- `2-insert`: Script to insert documents into a collection.
+- `3-all`: Script to list all documents in a collection.
+- `4-match`: Script to match documents based on certain criteria.
+- `5-count`: Script to count documents in a collection.
+- `6-update`: Script to update documents in a collection.
+- `7-delete`: Script to delete documents from a collection.
+- `8-all.py`: Python script to list all documents in a collection.
+- `9-insert_school.py`: Python script to insert a document into a collection.
+- `10-update_topics.py`: Python script to update documents based on a topic.
+- `11-schools_by_topic.py`: Python script to find schools by topic.
+- `12-log_stats.py`: Python script to get log statistics.
+- `100-find`: Script to find documents based on specific criteria.
+- `101-students.py`: Python script to work with student documents.
+- `102-log_stats.py`: Python script to get advanced log statistics.
+- `main.py`: Main script to run various operations.
+- `dump/`: Directory containing database dumps.
+- `dump.zip`: Zipped database dump.
+
+## Usage
+
+To use any of these scripts, you need to have MongoDB installed and running. You can execute the Python scripts using the following command:
+
+```sh
+python3 script_name.py

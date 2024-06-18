@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
-'''Task 12's module.
-'''
+"""
+Module to give stats on nginx logs
+"""
+
 from pymongo import MongoClient
 
 
-def print_nginx_request_logs(nginx_collection):
-    '''Prints stats about Nginx request logs.
-    '''
-    print('{} logs'.format(nginx_collection.count_documents({})))
-    print('Methods:')
-    methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
-    for method in methods:
-        req_count = len(list(nginx_collection.find({'method': method})))
-        print('\tmethod {}: {}'.format(method, req_count))
-    status_checks_count = len(list(
-        nginx_collection.find({'method': 'GET', 'path': '/status'})
-    ))
-    print('{} status check'.format(status_checks_count))
-
-
-def run():
-    '''Provides some stats about Nginx logs stored in MongoDB.
-    '''
+if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
-    print_nginx_request_logs(client.logs.nginx)
-
-
-if __name__ == '__main__':
-    run()
+    logs_collection = client.logs.nginx
+    print(f'{logs_collection.count_documents(filter={})} logs')
+    print('Methods:')
+    print(f'\tmethod GET: {logs_collection.count_documents( filter={"method": "GET"} )}')
+    print(f'\tmethod POST: {logs_collection.count_documents( filter={"method": "POST"} )}')
+    print(f'\tmethod PUT: {logs_collection.count_documents( filter={"method": "PUT"} )}')
+    print(f'\tmethod PATCH: {logs_collection.count_documents( filter={"method": "PATCH"} )}')
+    print(f'\tmethod DELETE: {logs_collection.count_documents( filter={"method": "DELETE"} )}')
+    print(f'{logs_collection.count_documents( filter={"method": "GET", "path": "/status"} )} status check')
