@@ -1,3 +1,2 @@
-// A script that displays the number of documents in the collection school
-use "$2"
-db.school.count()
+// number of documenents
+db.school.find().count();

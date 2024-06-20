@@ -1,2 +1,2 @@
-// A script that creates or uses the database my_db
-use my_db
+// cmd to create or use database named 'my_db'
+use my_db;
